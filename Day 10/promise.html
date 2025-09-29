@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        const noPromise = new Promise((resolve, reject) => {
+            const password = "12345678";
+            if (password.length > 8) {
+                resolve("Password is Okk");
+            } else {
+                reject("Password is not okk");
+            }
+        })
+        noPromise.then((msg) => {
+            console.log(msg);
+        })
+        noPromise.catch((err) => {
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
