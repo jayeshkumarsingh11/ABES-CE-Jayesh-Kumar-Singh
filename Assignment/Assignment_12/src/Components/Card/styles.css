@@ -1,0 +1,25 @@
+#card1 {
+    border: 5px solid black;
+    height: 250px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#card1 img {
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+#card1 h1 {
+    font-size: 20px;
+    margin: 10px 0 5px 0;
+    text-align: center;
+}
+
+#card1 h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: center;
+}
