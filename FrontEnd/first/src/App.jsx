@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
-import Navbar from './Navbar/navbar';
-import Button from './Button/button';
-import Card from './Card/card';
-import Card2 from './Card/Card2';
+import Navbar from '../src/component/Navbar/navbar';
+import Button from '../src/component/Button/button';
+import Card from '../src/component/Card/card';
+import Card2 from '../src/component/Card/Card2';
 
 function App() {
 

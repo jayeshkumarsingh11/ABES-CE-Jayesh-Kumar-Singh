@@ -1,0 +1,16 @@
+.nav {
+    margin-bottom: 20px;
+    background-color: #3e7ab7;
+    padding: 10px;
+    border: 1px solid #4085ca;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}

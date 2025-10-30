@@ -1,4 +1,4 @@
-import image from '../assets/images/images.webp'; 
+import image from '../../assets/images/images.webp'; 
 
 export default function Card2() {
   return (
