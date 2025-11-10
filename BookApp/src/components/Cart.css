@@ -4,6 +4,40 @@
     padding: 1rem;
 }
 
+/* Cart Capacity Indicator */
+.cart-capacity {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.capacity-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.capacity-progress {
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.capacity-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+    text-align: right;
+}
+
+.capacity-warning {
+    color: #dc2626;
+    font-weight: 500;
+}
+
 .cart-items {
     display: flex;
     flex-direction: column;

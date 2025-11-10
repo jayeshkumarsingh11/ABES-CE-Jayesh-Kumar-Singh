@@ -4,6 +4,14 @@ import './Cart.css';
 
 function Cart() {
     const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
+    
+    // Calculate total items and remaining capacity
+    const CART_LIMIT = 20;
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    const remainingCapacity = CART_LIMIT - totalItems;
+
+    // Calculate progress percentage
+    const progressPercentage = (totalItems / CART_LIMIT) * 100;
 
     if (cartItems.length === 0) {
         return (
@@ -17,6 +25,28 @@ function Cart() {
     return (
         <div className="cart-container">
             <h2>Your Cart</h2>
+            
+            {/* Cart Capacity Indicator */}
+            <div className="cart-capacity">
+                <div className="capacity-bar">
+                    <div 
+                        className="capacity-progress" 
+                        style={{ 
+                            width: `${progressPercentage}%`,
+                            backgroundColor: progressPercentage >= 90 ? '#dc2626' : 
+                                          progressPercentage >= 75 ? '#f59e0b' : '#22c55e'
+                        }}
+                    ></div>
+                </div>
+                <div className="capacity-text">
+                    {remainingCapacity === 0 ? (
+                        <span className="capacity-warning">Cart limit reached (20 books maximum)</span>
+                    ) : (
+                        <span>Books in cart: {totalItems} / {CART_LIMIT} (Space for {remainingCapacity} more)</span>
+                    )}
+                </div>
+            </div>
+
             <div className="cart-items">
                 {cartItems.map((item) => (
                     <div key={item.title} className="cart-item">

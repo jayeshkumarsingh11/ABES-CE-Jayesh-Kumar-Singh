@@ -115,6 +115,33 @@
     transform: none;
 }
 
+.cart-limit-warning {
+    color: #dc2626;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 8px;
+    background: #fee2e2;
+    border-radius: 6px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.cart-capacity-warning {
+    color: #b45309;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 4px;
+    background: #fef3c7;
+    padding: 4px 8px;
+    border-radius: 4px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Add a subtle shake animation when clicking disabled button */
 #book button:disabled:active {
     animation: shake 0.3s;

@@ -5,13 +5,19 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-title {
   color: white;
   margin: 0;
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
 }
 
 .nav-list {
@@ -19,8 +25,10 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .nav-list li a {
@@ -68,20 +76,38 @@
 }
 
 /* Responsive Design */
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   .nav-root {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-title {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .nav-list {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-list li a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .nav-root {
     padding: 1rem 3rem;
   }
 
   .nav-title {
-    margin-bottom: 0;
-  }
-
-  .nav-list {
-    justify-content: flex-end;
+    margin-right: 2rem;
   }
 }
 

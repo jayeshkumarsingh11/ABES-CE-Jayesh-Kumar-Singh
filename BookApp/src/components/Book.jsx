@@ -4,10 +4,14 @@ import './book.css'
 
 function Book(props) {
     const [count, setCount] = useState(0)
-    const { addToCart } = useCart()
+    const { addToCart, cartItems } = useCart()
+
+    // Calculate total items in cart
+    const cartTotal = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const remainingCapacity = 20 - cartTotal;
 
     function increment() {
-        if (count >= 10) return;
+        if (count >= Math.min(10, remainingCapacity)) return;
         setCount(count + 1)
     }
 
@@ -35,17 +39,39 @@ function Book(props) {
 
             <div className="book-controls">
                 <div className="quantity-controls">
-                    <button onClick={increment} disabled={count >= 10}>+</button>
+                    <button 
+                        onClick={increment} 
+                        disabled={count >= Math.min(10, remainingCapacity)}
+                        title={remainingCapacity === 0 ? "Cart limit reached (20 books)" : ""}
+                    >
+                        +
+                    </button>
                     <span>{count}</span>
-                    <button onClick={decrement} disabled={count <= 0}>-</button>
+                    <button 
+                        onClick={decrement} 
+                        disabled={count <= 0}
+                    >
+                        -
+                    </button>
                 </div>
-                <button 
-                    className="add-to-cart-btn" 
-                    onClick={handleAddToCart}
-                    disabled={count === 0}
-                >
-                    Add to Cart
-                </button>
+                {remainingCapacity > 0 ? (
+                    <button 
+                        className="add-to-cart-btn" 
+                        onClick={handleAddToCart}
+                        disabled={count === 0}
+                    >
+                        Add to Cart
+                    </button>
+                ) : (
+                    <div className="cart-limit-warning">
+                        Cart limit reached (20 books)
+                    </div>
+                )}
+                {remainingCapacity > 0 && remainingCapacity < 5 && (
+                    <div className="cart-capacity-warning">
+                        Only {remainingCapacity} more can be added
+                    </div>
+                )}
             </div>
         </div>
     )
