@@ -5,6 +5,8 @@ import Nav from './components/Nav'
 import { Route, Routes } from 'react-router-dom'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import Cart from './components/Cart'
+import { CartProvider } from './context/CartContext'
 
 function Home() {
   return (
@@ -22,14 +24,17 @@ function Home() {
 
 function App() {
   return (
-    <div>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </div>
+    <CartProvider>
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </div>
+    </CartProvider>
   )
 }
 
