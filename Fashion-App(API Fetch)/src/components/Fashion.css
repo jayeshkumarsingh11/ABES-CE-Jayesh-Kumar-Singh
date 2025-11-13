@@ -1,0 +1,6 @@
+.card {
+    border: 5px solid red;
+    height: 300px;
+    width: 200px;
+    text-align: center;
+}
