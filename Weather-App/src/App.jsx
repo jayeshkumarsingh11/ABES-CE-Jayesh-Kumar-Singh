@@ -7,8 +7,7 @@ function App() {
   const [city, setCity] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-  const apiKey = "d864610e04684d14abc92918251311"; // Free API key for demo
+  const apiKey = "d864610e04684d14abc92918251311";
 
   const fetchWeather = async (searchCity) => {
     if (!searchCity.trim()) {

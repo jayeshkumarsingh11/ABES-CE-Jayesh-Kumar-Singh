@@ -1,0 +1,10 @@
+.card{
+    margin: 5px;
+    border: 1px solid black;
+    text-align:center;
+    background-color: rgb(219, 219, 219);
+}
+
+img {
+    padding: 10px;
+}
