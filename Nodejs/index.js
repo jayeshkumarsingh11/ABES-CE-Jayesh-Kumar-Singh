@@ -36,11 +36,18 @@ const fs = require('fs');
 
 // fs.writeFile("./a.txt", "Hello this is a async file", () => { })
     
-fs.readFile("./CSE-A.txt", "utf-8", (err, result) => {
-    if (err){
-        console.log("Error", err);
-    } else {
-        console.log(result);
-    }
- });
+// fs.readFile("./CSE-A.txt", "utf-8", (err, result) => {
+//     if (err){
+//         console.log("Error", err);
+//     } else {
+//         console.log(result);
+//     }
+//  });
 
+// const r = fs.readFileSync("./CE-A.txt", "utf-8");
+
+// fs.writeFileSync("./b.txt", r);
+
+// fs.cpSync("e.txt", "CE-A.txt");
+
+// fs.cp("CSE-A.txt", "d.txt", () => {});
