@@ -52,7 +52,31 @@ const fs = require('fs');
 
 // fs.cp("CSE-A.txt", "d.txt", () => {});
 
+// fs.cp("CE-A.txt", "c.txt" , (err, result) => {
+//     if (err){
+//         console.log("Error", err);
+//     }
+// }) 
+
 // fs.appendFileSync("./e.txt", `and we are coder`);
 
-const r = fs.readFileSync("./CE-A.txt", "utf-8");
-fs.appendFileSync("./e.txt", r);
+// fs.appendFile("./d.txt", `we are Coder`, () => {});
+
+// fs.appendFile("./c.txt", `we are Coder`, (err) => {
+//     if (err) {
+//         console.log("Error", err);
+//     }
+// })
+
+// const r = fs.readFileSync("./CE-A.txt", "utf-8");
+// fs.appendFileSync("./e.txt", r);
+
+// fs.unlinkSync("./d.txt");
+
+// fs.unlink("./d.txt", (err) => {
+//     if (err){
+//         console.log("Error", err);
+//     }
+// })
+
+fs.unlink("./c.txt", () => {})
