@@ -24,7 +24,7 @@
 
 // myServer.listen(8000, () => console.log('Server Started'));
 
-const fs = require('fs');
+// const fs = require('fs');
 
 // fs.writeFileSync("./CE-A.txt", "Hello This is My First File");
 
@@ -79,4 +79,24 @@ const fs = require('fs');
 //     }
 // })
 
-fs.unlink("./c.txt", () => {})
+// fs.unlink("./c.txt", () => {})
+
+
+
+
+
+const os = require('os');
+
+// console.log("platform", os.platform());
+
+// console.log("user", os.userInfo());
+
+// console.log("CPU", os.arch());
+
+// console.log("Free Memory", os.freemem(), "bytes");
+
+// console.log("Total Memory", os.totalmem(), "bytes");
+
+// console.log("System update", os.uptime());
+
+// console.log("host name", os.hostname());
