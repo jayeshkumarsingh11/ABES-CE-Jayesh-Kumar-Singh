@@ -51,3 +51,8 @@ const fs = require('fs');
 // fs.cpSync("e.txt", "CE-A.txt");
 
 // fs.cp("CSE-A.txt", "d.txt", () => {});
+
+// fs.appendFileSync("./e.txt", `and we are coder`);
+
+const r = fs.readFileSync("./CE-A.txt", "utf-8");
+fs.appendFileSync("./e.txt", r);
