@@ -117,22 +117,87 @@
 //     console.log("Sever is Running");
 // })
 
-const http = require('http');
+// const http = require('http');
+// const fs = require('fs');
+
+// const server = http.createServer((req, res) => {
+//     /* -- readFile Method -- */
+//     // fs.readFile('let.json', (err, data) => {
+//     //     if (err) {
+//     //         res.statusCode = 500;
+//     //         res.end("Server Error");
+//     //     } else {
+//     //         res.statusCode = 200;
+//     //         // res.setHeader('Content-Type', 'application/json');
+//     //         res.end(data);
+//     //     }
+
+//     //     // if (err) throw err;
+//     //     // const jsonData = JSON.parse(data);
+//     //     // console.log(jsonData.Name);
+//     // });
+//     /* --Loading a Json File using the require function-- */  
+//     // const config = require('./let.json');
+//     // console.log(config);
+
+//     /* --readFileSyscMethod-- */
+//     // const {readFileSync} = require('fs');
+//     // const data = readFileSync('./let.json');
+//     // console.log(JSON.parse(data));
+
+
+//     /* --------Write Operation------- */
+//     /* --Using fs.writeFile Method-- */
+//     const temp = 
+//     {
+//         Name: ",
+//         Course: "B-Tech"
+//     }
+//     const data = JSON.stringify(temp);
+//     fs.writeFile("let.json", data, (err) => {
+//         if(err) throw err;
+//         else console.log("Data Written Successfully");
+//     })
+// });
+
+// server.listen(8000, () => {
+//     console.log('Server is Running');
+// });
+
+
+/* ----------Update----------- */
+// const {writeFile, readFile} = require('fs');
+// const path = './let.json';
+
+// readFile(path, (err, data) => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     const jsonData = JSON.parse(data);
+//     jsonData.createdAt = new Date().toISOString();
+//     writeFile(path, JSON.stringify(jsonData), (err) => {
+//         if (err) throw err;
+//         console.log("Data Written Successfully");
+//     })
+// })
+
+
+// const fs = require('fs');
+// const path = './let.json';
+// var data = fs.readFileSync(path);
+// var t = JSON.parse(data);
+// let temp = 
+// {
+//     Name: "Atul",
+//     Course: "B-Tech"
+// }
+// t.push(temp);
+// fs.writeFile("let.json", JSON.stringify(t), (err) => {
+//     if (err) throw err;
+//     console.log("Done");
+// })
+
 const fs = require('fs');
+const path  = './let.json';
 
-const server = http.createServer((req, res) => {
-    fs.readFile('let.json', 'utf-8', (err, data) => {
-        if (err) {
-            res.statusCode = 500;
-            res.end("Server Error");
-        } else {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.end(data);
-        }
-    });
-});
-
-server.listen(8000, () => {
-    console.log('Server is Running');
-});
