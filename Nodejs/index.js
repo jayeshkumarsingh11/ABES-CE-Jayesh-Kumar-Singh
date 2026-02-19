@@ -85,7 +85,7 @@
 
 
 
-const os = require('os');
+// const os = require('os');
 
 // console.log("platform", os.platform());
 
@@ -100,3 +100,39 @@ const os = require('os');
 // console.log("System update", os.uptime());
 
 // console.log("host name", os.hostname());
+
+
+// const http = require('http');
+// const fs = require('fs');
+
+// const home = fs.readFileSync("./a.html")
+// const server = http.createServer((req, res) => {
+//     res.statusCode = 200;
+//     res.end(home);
+//     // res.setHeader('Content-type', 'text/plain');
+//     // res.end("Hello");
+// })
+
+// server.listen(8000, () => {
+//     console.log("Sever is Running");
+// })
+
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res) => {
+    fs.readFile('let.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.statusCode = 500;
+            res.end("Server Error");
+        } else {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(data);
+        }
+    });
+});
+
+server.listen(8000, () => {
+    console.log('Server is Running');
+});
