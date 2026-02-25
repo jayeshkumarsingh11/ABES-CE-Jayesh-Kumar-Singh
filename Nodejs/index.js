@@ -189,8 +189,8 @@
 // var t = JSON.parse(data);
 // let temp = 
 // {
-//     Name: "Atul",
-//     Course: "B-Tech"
+//     Name: "abc",
+//     Course: "xyz"
 // }
 // t.push(temp);
 // fs.writeFile("let.json", JSON.stringify(t), (err) => {
