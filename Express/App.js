@@ -72,6 +72,57 @@ app.get('/about/:id', (req, res) => {
     }
 })
 
+//To Create Data app.post Method is used
+//Data Created
+app.use(express.json());
+app.post('/create', (req, res) => {
+    try{
+        const newData ={
+            id: datas.length + 1,
+            ...req.body
+        }
+        datas.push(newData);
+        res.status(200).json({message: "Data Added", newData});
+    } catch(err){
+        res.status(500).json({message: "Data Not Fount", error: err.message});
+    }
+})
+
+//To Update Data app.put Method is Used
+//Data Update
+app.put('/update/:id', (req, res) => {
+    try{
+        const id = req.params.id;
+        const data = datas.findIndex(item => item.id == id);
+        if (data === -1){
+            return res.status(404).json({message: "Data Not Found"})
+        }
+        datas[data] = {
+            ...datas[data],
+            ...req.body
+        }
+        res.status(200).json({message: "Data Updated", d: datas[data]});   
+    } catch (err){
+        res.status(500).json({message: "Data Not Found", error: err.message});
+    }
+})
+
+//To Delete Data app.delete Method is Used
+//Data Delete
+app.delete('/delete/:id', (req, res) => {
+    try{
+        const id = req.params.id;
+        const data = datas.find(item => item.id == id);
+        if (data == -1){
+            return res.status(404).json({message: "Data Not Found"});
+        }
+        datas.splice(data, 1);
+        res.status(200).json({message: "Data Deleted", data});
+    } catch(err){
+        res.status(500).json({message: "Data Not Found", error: err.message});
+    }
+})
+
 app.listen(port, () => {
     console.log(`Server is Running at http://localhost:${port}`);
 });
